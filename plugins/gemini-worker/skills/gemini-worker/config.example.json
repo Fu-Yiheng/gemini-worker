@@ -1,0 +1,13 @@
+{
+  "python": "C:/Python312/python.exe",
+  "jobs_dir": "D:/gemini-jobs",
+  "model": "gemini-4-neon-xhigh",
+  "author": "土木工程方向的研究者",
+  "reply_language": "中文",
+  "rules": [
+    "builtin",
+    {"title": "我的写作规则", "path": "~/Documents/writing/my-rules.md"}
+  ],
+  "tells": "builtin",
+  "max_parallel": 2
+}

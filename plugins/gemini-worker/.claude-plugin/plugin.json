@@ -1,0 +1,6 @@
+{
+  "name": "gemini-worker",
+  "version": "1.0.0",
+  "description": "在 Claude Code 里调用 Google Gemini（经 Antigravity CLI，用你自己的 Google 账号额度，不用 API key）：论文文字润色并自动核对数字、引用、公式没被改，读 PDF 和图片，独立审核和第二意见。Gemini 全程只读。",
+  "author": { "name": "Fu-Yiheng" }
+}
