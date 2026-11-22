@@ -877,7 +877,7 @@ def cmd_polish(a) -> int:
     kind_zh = {"latex": "LaTeX 源文件", "markdown": "Markdown 文本", "text": "纯文本"}[kind]
     lang_zh = {"en": "英文", "zh": "中文"}[lang]
     instr = fill(read_text(PROMPTS / "polish.md"), KIND=kind_zh, LANG=lang_zh, AUTHOR=author(),
-                 NOTES_LANG=str(CFG.get("reply_language") or "中文"))
+                 NOTES_LANG=str(CFG.get("reply_language") or "与原文相同的语言"))
     first = instr.strip()
     if notes_txt:
         first += "\n\n## 本次任务的补充说明（来自 Claude）\n\n" + notes_txt
@@ -1028,15 +1028,15 @@ def tells_file() -> Path:
 
 
 def load_tells() -> dict[str, re.Pattern]:
-    """Regexes from the two code blocks after 'EN（加 `-i`）：' and 'ZH：' (see rules/ai-tells.md)."""
+    """Regexes from the code blocks right after a line starting with 'EN' or 'ZH' and ending with a
+    colon, e.g. 'EN (case-insensitive):' / 'ZH:' (rules/ai-tells.md) or 'EN（加 `-i`）：' / 'ZH：'."""
     p = tells_file()
     out: dict[str, re.Pattern] = {}
     if not p.is_file():
         return out
     t = read_text(p)
-    for key, label, flags in (("EN", r"EN（加 `-i`）：", re.I), ("ZH", r"ZH：", 0)):
-        m = re.search(re.escape(label) + r"\s*```[^\n]*\n(.*?)\n```", t, re.S) if key == "EN" \
-            else re.search(r"\nZH：\s*```[^\n]*\n(.*?)\n```", t, re.S)
+    for key, flags in (("EN", re.I), ("ZH", 0)):
+        m = re.search(rf"(?m)^{key}\b[^\n]*[:：][ \t]*\r?\n```[^\n]*\n(.*?)\n```", t, re.S)
         if m:
             try:
                 out[key] = re.compile(m.group(1).strip(), flags)

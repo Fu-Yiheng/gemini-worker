@@ -1,26 +1,27 @@
-# 任务说明（给 Gemini）
+# Task brief (for Gemini)
 
-<!-- 复制一份来填，放在临时目录。Gemini 看不到我们和用户的对话，这份说明是它唯一的入口。
-     不要把期望答案写进来（例如“这个数应该是 0.21”），免得它顺着说。 -->
+<!-- Copy this file, fill it in and keep it in a temp folder. Gemini cannot see the conversation, so this brief is all it gets.
+     Write it in the user's language: unless "reply_language" is set, Gemini answers in the language of the brief.
+     Do not put the answers you expect here (e.g. "this value should be 0.21"); Gemini would simply agree. -->
 
-## 背景
+## Background
 
-（一两段：这是什么材料、属于哪个课题、为什么要请 Gemini 看。必要的术语和约定写清楚。）
+(One or two paragraphs: what the material is, which project it belongs to, and why Gemini is asked to look at it. Define the terms and conventions it needs.)
 
-## 要你做的事
+## What to do
 
-1. （具体问题，每个问题都要能用材料回答或核对）
+1. (A concrete question that can be answered or checked from the material)
 2. 
 
-## 材料
+## Material
 
-- （文件的绝对路径，和命令里的 --attach 一致；只看哪几页、哪几张图、哪几行）
+- (Absolute file paths, matching --attach in the command; which pages, figures or lines to look at)
 
-## 不要做的事
+## Do not
 
-- 不要改文件，不要运行命令。
-- （按需补充：不要查网页；不要用某个来源；不要评价某部分）
+- Do not modify files or run commands.
+- (As needed: do not search the web; do not use a certain source; do not judge a certain part)
 
-## 交付格式
+## Deliverable
 
-按身份说明里的报告格式。（按需补充：例如读图时每个数给出页码和图号，看不清的写“看不清”。）
+Follow the report format in the role description. (As needed: e.g. when reading figures, give the page and figure number for every value, and write "unreadable" instead of guessing.)

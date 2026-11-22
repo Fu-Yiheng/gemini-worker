@@ -1,8 +1,8 @@
-# 本次润色的补充说明（给 Gemini）
+# Notes for this polishing job (for Gemini)
 
-<!-- 可选。复制一份来填，用 --notes 传给脚本。配置里的写作规则（默认是自带的 AI 腔清单）脚本会自动附上，这里不用重复。 -->
+<!-- Optional. Copy this file, fill it in and pass it with --notes. The writing rules from the config (by default the bundled list of AI-sounding phrases) are attached automatically; do not repeat them here. -->
 
-- 稿件：（哪篇论文、哪一节；目标期刊）
-- 必须原样保留的术语和说法：（逐条列出，例如方法名、研究对象的名称）
-- 已经定下的说法：（审稿回应、术语核查里定过的，不得改回）
-- 其他要求：（例如美式拼写；方法部分用现在时、试验结果用过去时）
+- Manuscript: (which paper and section; target journal)
+- Terms and phrases that must stay exactly as they are: (list them, e.g. method names, names of the objects studied)
+- Wording that is already settled: (decided in review responses or terminology checks; do not change it back)
+- Other requirements: (e.g. American spelling; present tense for methods, past tense for experimental results)
